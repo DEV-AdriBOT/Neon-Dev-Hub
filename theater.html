@@ -1,31 +1,106 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Theater of the Mind | Neon Dev</title>
-  <link rel="stylesheet" href="https://dev-adribot.github.io/Neon-Dev-Hub/css/style.css">
   <meta name="description" content="Psychological visual novel exploring trauma and memory">
-
-  <meta property="og:title" content="Theater of the Mind">
-  <meta property="og:description" content="Psychological visual novel exploring trauma and memory">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dev-adribot.github.io/Neon-Dev-Hub/theater">
-  <meta property="og:image" content="https://dev-adribot.github.io/Neon-Dev-Hub/img/theater-preview.jpg">
-
-  <link rel="icon" href="https://dev-adribot.github.io/Neon-Dev-Hub/favicon.ico" sizes="any">
-  <link rel="icon" href="https://dev-adribot.github.io/Neon-Dev-Hub/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="https://dev-adribot.github.io/Neon-Dev-Hub/icon.png">
-
-  <link rel="manifest" href="https://dev-adribot.github.io/Neon-Dev-Hub/site.webmanifest">
-  <meta name="theme-color" content="#0a0a0a">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Only page-specific overrides */
+    :root {
+      --primary: #4db6ac;
+      --primary-light: #80cbc4;
+      --primary-dark: #00897b;
+      --secondary: #80deea;
+      --secondary-dark: #4dd0e1;
+      --accent: #e0f7fa;
+      --dark: #263238;
+      --light: #ffffff;
+      --text: #eceff1;
+      --text-dark: #455a64;
+      --glass-light: rgba(255, 255, 255, 0.1);
+      --glass-dark: rgba(0, 0, 0, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --border-radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
+    .site-header {
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo-container {
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--dark);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .neon {
+      color: var(--primary-dark);
+    }
+
+    .dev {
+      color: var(--dark);
+    }
+
+    .main-nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: var(--border-radius);
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      background: rgba(77, 182, 172, 0.1);
+      color: var(--primary-dark);
+    }
+
+    /* Game Header */
     .game-header {
       background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(77, 182, 172, 0.2));
       min-height: 60vh;
@@ -48,6 +123,53 @@
       margin-bottom: 20px;
     }
 
+    /* Glass Card Effect */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: var(--border-radius);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+      padding: 30px;
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
+    }
+
+    /* Section Layout */
+    .section-container {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .section-column {
+      flex: 1;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: var(--dark);
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+    }
+
+    /* Discord CTA */
     .discord-cta {
       background: rgba(88, 101, 242, 0.1);
       border: 1px solid rgba(88, 101, 242, 0.3);
@@ -57,16 +179,105 @@
       text-align: center;
     }
 
-    .screenshot-placeholder {
-      padding: 60px 20px;
-      text-align: center;
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--light);
+      box-shadow: 0 4px 15px rgba(77, 182, 172, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(77, 182, 172, 0.4);
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 40px 0;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .footer-links ul {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-dark);
+    }
+
+    .footer-legal {
+      text-align: right;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .section-container {
+        flex-direction: column;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-links ul {
+        justify-content: center;
+      }
+
+      .footer-legal {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
-
 <body>
-<div class="scroll-progress"></div>
-
 <header class="site-header">
   <div class="container">
     <div class="logo-container">
@@ -94,64 +305,65 @@
     </div>
   </section>
 
-  <section id="about-game" class="section">
-    <div class="container">
-      <div class="glass-card">
-        <h2 class="section-title">About the Game</h2>
-        <p><em>Theater of the Mind</em> is a surreal visual novel set in the subconscious of a character with repressed trauma. Each act represents an emotion turned into a stage. Each scene, an unanswered question.</p>
-        <p>Currently in alpha development using Python with Pygame, the game explores psychological themes through interactive narrative and symbolic puzzles.</p>
+  <div class="container">
+    <div class="section-container">
+      <!-- About the Game Section -->
+      <div class="section-column">
+        <div class="glass-card">
+          <h2 class="section-title">About the Game</h2>
+          <p><em>Theater of the Mind</em> is a surreal visual novel set in the subconscious of a character with repressed trauma. Each act represents an emotion turned into a stage. Each scene, an unanswered question.</p>
+          <p>Currently in alpha development using Python with Pygame, the game explores psychological themes through interactive narrative and symbolic puzzles.</p>
 
-        <div class="features-list" style="margin-top: 40px;">
-          <h3>Features:</h3>
-          <ul>
-            <li><i class="fas fa-theater-masks"></i> Narrative divided into theatrical acts</li>
-            <li><i class="fas fa-puzzle-piece"></i> Psychological puzzles</li>
-            <li><i class="fas fa-comments"></i> Dialogue choices that alter the story</li>
-            <li><i class="fas fa-music"></i> Adaptive emotional soundtrack</li>
-            <li><i class="fas fa-paint-brush"></i> Unique puppet theater visual style</li>
-          </ul>
+          <div style="margin-top: 30px;">
+            <h3>Features:</h3>
+            <ul style="list-style: none; margin-top: 15px;">
+              <li style="margin-bottom: 10px;"><i class="fas fa-theater-masks" style="color: var(--primary); margin-right: 10px;"></i> Narrative divided into theatrical acts</li>
+              <li style="margin-bottom: 10px;"><i class="fas fa-puzzle-piece" style="color: var(--primary); margin-right: 10px;"></i> Psychological puzzles</li>
+              <li style="margin-bottom: 10px;"><i class="fas fa-comments" style="color: var(--primary); margin-right: 10px;"></i> Dialogue choices that alter the story</li>
+              <li style="margin-bottom: 10px;"><i class="fas fa-music" style="color: var(--primary); margin-right: 10px;"></i> Adaptive emotional soundtrack</li>
+              <li><i class="fas fa-paint-brush" style="color: var(--primary); margin-right: 10px;"></i> Unique puppet theater visual style</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screenshots Section -->
+      <div class="section-column">
+        <div class="glass-card">
+          <h2 class="section-title">Screenshots</h2>
+          <div style="text-align: center; padding: 40px 0;">
+            <i class="fas fa-image" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+            <p>Screenshots coming soon</p>
+          </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <section id="purchase" class="section">
-    <div class="container">
-      <div class="glass-card">
-        <h2 class="section-title">Get Early Access</h2>
-        <p>The alpha version is available now for testing and feedback. As this is an early version, purchases help support continued development.</p>
+    <!-- Purchase Section -->
+    <div class="glass-card">
+      <h2 class="section-title">Get Early Access</h2>
+      <p>The alpha version is available now for testing and feedback. As this is an early version, purchases help support continued development.</p>
 
-        <div class="discord-cta">
-          <h3><i class="fab fa-discord"></i> Purchase via Discord</h3>
-          <p>Contact me directly on Discord to get access to the alpha version:</p>
-          <a href="https://discord.com/users/mr_neon_dev" class="btn btn-primary" style="margin-top: 20px;">
-            <i class="fab fa-discord"></i> Message mr_neon_dev
-          </a>
-          <p style="margin-top: 15px; font-size: 0.9rem;">I'll provide download instructions and payment details after you contact me.</p>
-        </div>
+      <div class="discord-cta">
+        <h3><i class="fab fa-discord" style="color: #5865F2;"></i> Purchase via Discord</h3>
+        <p>Contact me directly on Discord to get access to the alpha version:</p>
+        <a href="https://discord.com/users/mr_neon_dev" class="btn btn-primary" style="margin-top: 20px;">
+          <i class="fab fa-discord"></i> Message mr_neon_dev
+        </a>
+        <p style="margin-top: 15px; font-size: 0.9rem;">I'll provide download instructions and payment details after you contact me.</p>
+      </div>
 
-        <div style="margin-top: 40px;">
-          <h4>Alpha Version Disclaimer:</h4>
-          <ul class="features-list">
-            <li>Game is in active development</li>
-            <li>Content may change significantly</li>
-            <li>Some features may be incomplete</li>
-            <li>Available for Windows initially (Mac/Linux coming later)</li>
-          </ul>
-        </div>
+      <div style="margin-top: 40px;">
+        <h4>Alpha Version Disclaimer:</h4>
+        <ul style="list-style: none; margin-top: 15px;">
+          <li style="margin-bottom: 8px;"><i class="fas fa-exclamation-circle" style="color: var(--primary); margin-right: 10px;"></i> Game is in active development</li>
+          <li style="margin-bottom: 8px;"><i class="fas fa-exclamation-circle" style="color: var(--primary); margin-right: 10px;"></i> Content may change significantly</li>
+          <li style="margin-bottom: 8px;"><i class="fas fa-exclamation-circle" style="color: var(--primary); margin-right: 10px;"></i> Some features may be incomplete</li>
+          <li><i class="fas fa-exclamation-circle" style="color: var(--primary); margin-right: 10px;"></i> Available for Windows initially (Mac/Linux coming later)</li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <section id="screenshots" class="section">
-    <div class="container">
-      <h2 class="section-title">Alpha Screenshots</h2>
-      <div class="glass-card screenshot-placeholder">
-        <i class="fas fa-image" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
-        <p>Screenshots coming soon</p>
-      </div>
-    </div>
-  </section>
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -173,21 +385,25 @@
 
       <div class="footer-legal">
         <p>&copy; <span id="year"></span> Neon Dev. All rights reserved.</p>
-        <p class="small-text">Theater of the Mind is in alpha development.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px;">Theater of the Mind is in alpha development.</p>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="https://dev-adribot.github.io/Neon-Dev-Hub/js/app.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Track Discord clicks
-    document.querySelector('a[href^="https://discord"]').addEventListener('click', function() {
-      console.log('Discord contact initiated');
-    });
+    const discordBtn = document.querySelector('a[href^="https://discord"]');
+    if(discordBtn) {
+      discordBtn.addEventListener('click', function() {
+        console.log('Discord contact initiated');
+        // You could add analytics here
+      });
+    }
   });
 </script>
 </body>
