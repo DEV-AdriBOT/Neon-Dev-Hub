@@ -1,0 +1,186 @@
+<!doctype html>
+<html class="no-js" lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neon Dev Apps Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Hub oficial de juegos y proyectos de Neon Dev">
+
+  <meta property="og:title" content="Neon Dev Apps Hub">
+  <meta property="og:description" content="Hub oficial de juegos y proyectos de Neon Dev">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://neondev.example.com">
+  <meta property="og:image" content="https://neondev.example.com/img/social-preview.jpg">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#e0f7fa">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+<div class="scroll-progress"></div>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo-container">
+      <h1 class="logo">
+        <span class="neon">Neon</span> <span class="dev">Dev</span>
+        <span class="apps-hub">Apps Hub</span>
+      </h1>
+    </div>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#games" class="nav-link">Juegos</a></li>
+        <li><a href="#about" class="nav-link">Sobre mí</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="main-content">
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <h2 class="hero-title">Experiencias Inmersivas</h2>
+        <p class="hero-text">Descubre mis juegos narrativos y psicológicos</p>
+        <a href="#games" class="btn btn-primary">Ver Juegos</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="games" class="games-section">
+    <div class="container">
+      <h2 class="section-title">Mis Juegos</h2>
+
+      <div class="games-grid">
+        <article class="game-card glass-card">
+          <div class="game-card-content">
+            <h3>Theater of the Mind</h3>
+            <div class="game-icon">🎭</div>
+            <p class="game-genre">Novela Visual Psicológica</p>
+            <p class="game-description">Un viaje surrealista a través de una psique fragmentada</p>
+            <a href="theater.html" class="btn btn-outline">Ver Detalles</a>
+          </div>
+        </article>
+
+        <article class="game-card glass-card">
+          <div class="game-card-content">
+            <h3>Project Lumina</h3>
+            <div class="game-icon">✨</div>
+            <p class="game-genre">Próximamente</p>
+            <p class="game-description">Aventura de puzles atmosféricos</p>
+            <button class="btn btn-outline" disabled>Próximamente</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2 class="section-title">Sobre Neon Dev</h2>
+
+      <div class="about-content glass-card">
+        <div class="about-text">
+          <p>Desarrollador independiente especializado en experiencias narrativas que exploran la psicología humana.</p>
+          <p>Mis juegos combinan temas psicológicos con estilos visuales únicos y mecánicas innovadoras.</p>
+        </div>
+
+        <div class="skills">
+          <h3>Habilidades</h3>
+          <ul class="skills-list">
+            <li><i class="fas fa-code"></i> Desarrollo en C++</li>
+            <li><i class="fas fa-book"></i> Narrativa psicológica</li>
+            <li><i class="fas fa-paint-brush"></i> Diseño visual</li>
+            <li><i class="fas fa-headphones"></i> Diseño sonoro</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+
+      <div class="contact-content">
+        <form id="contact-form" class="glass-card">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+        </form>
+
+        <div class="social-links glass-card">
+          <h3>Conéctate</h3>
+          <ul>
+            <li>
+              <a href="https://twitter.com/neondev" target="_blank" rel="noopener">
+                <i class="fab fa-twitter"></i> @neondev
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/neondev" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i> neondev
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contacto@neondev.example.com">
+                <i class="fas fa-envelope"></i> contacto@neondev.example.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="neon">Neon</span><span class="dev">Dev</span>
+      </div>
+
+      <div class="footer-links">
+        <ul>
+          <li><a href="#games">Juegos</a></li>
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-legal">
+        <p>&copy; <span id="year"></span> Neon Dev. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
