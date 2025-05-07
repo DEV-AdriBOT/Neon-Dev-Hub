@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Theater of the Mind | Neon Dev</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://dev-adribot.github.io/Neon-Dev-Hub/css/style.css">
   <meta name="description" content="Psychological visual novel exploring trauma and memory">
 
   <meta property="og:title" content="Theater of the Mind">
   <meta property="og:description" content="Psychological visual novel exploring trauma and memory">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://neondev.example.com/theater">
-  <meta property="og:image" content="https://neondev.example.com/img/theater-preview.jpg">
+  <meta property="og:url" content="https://dev-adribot.github.io/Neon-Dev-Hub/theater">
+  <meta property="og:image" content="https://dev-adribot.github.io/Neon-Dev-Hub/img/theater-preview.jpg">
 
-  <link rel="icon" href="../favicon.ico" sizes="any">
-  <link rel="icon" href="../icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="icon" href="https://dev-adribot.github.io/Neon-Dev-Hub/favicon.ico" sizes="any">
+  <link rel="icon" href="https://dev-adribot.github.io/Neon-Dev-Hub/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://dev-adribot.github.io/Neon-Dev-Hub/icon.png">
 
-  <link rel="manifest" href="../site.webmanifest">
+  <link rel="manifest" href="https://dev-adribot.github.io/Neon-Dev-Hub/site.webmanifest">
   <meta name="theme-color" content="#0a0a0a">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,15 +25,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* Only page-specific overrides */
     .game-header {
-      background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(77, 182, 172, 0.2)),
-      url('../img/theater-bg.jpg') no-repeat center center/cover;
+      background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(77, 182, 172, 0.2));
       min-height: 60vh;
       display: flex;
       align-items: center;
       text-align: center;
       padding: 80px 0;
       color: white;
+      margin-bottom: 40px;
     }
 
     .alpha-badge {
@@ -51,13 +52,14 @@
       background: rgba(88, 101, 242, 0.1);
       border: 1px solid rgba(88, 101, 242, 0.3);
       border-radius: var(--border-radius);
-      padding: 20px;
-      margin: 30px 0;
+      padding: 30px;
+      margin: 40px 0;
+      text-align: center;
     }
 
-    .discord-cta i {
-      color: #5865F2;
-      margin-right: 10px;
+    .screenshot-placeholder {
+      padding: 60px 20px;
+      text-align: center;
     }
   </style>
 </head>
@@ -68,14 +70,14 @@
 <header class="site-header">
   <div class="container">
     <div class="logo-container">
-      <a href="../index.html" class="logo">
+      <a href="https://dev-adribot.github.io/Neon-Dev-Hub/" class="logo">
         <span class="neon">Neon</span> <span class="dev">Dev</span>
       </a>
     </div>
 
     <nav class="main-nav">
       <ul>
-        <li><a href="../index.html#games" class="nav-link">Back to Games</a></li>
+        <li><a href="https://dev-adribot.github.io/Neon-Dev-Hub/#games" class="nav-link">Back to Games</a></li>
       </ul>
     </nav>
   </div>
@@ -84,7 +86,7 @@
 <main class="main-content">
   <section class="game-header">
     <div class="container">
-      <div class="hero-content">
+      <div>
         <span class="alpha-badge">ALPHA VERSION</span>
         <h1>Theater of the Mind</h1>
         <p class="hero-text">A psychological journey through fragmented memories</p>
@@ -92,14 +94,14 @@
     </div>
   </section>
 
-  <section id="about-game" class="about-game-section">
+  <section id="about-game" class="section">
     <div class="container">
-      <div class="about-game-content glass-card">
-        <h2>About the Game</h2>
+      <div class="glass-card">
+        <h2 class="section-title">About the Game</h2>
         <p><em>Theater of the Mind</em> is a surreal visual novel set in the subconscious of a character with repressed trauma. Each act represents an emotion turned into a stage. Each scene, an unanswered question.</p>
         <p>Currently in alpha development using Python with Pygame, the game explores psychological themes through interactive narrative and symbolic puzzles.</p>
 
-        <div class="game-features">
+        <div class="features-list" style="margin-top: 40px;">
           <h3>Features:</h3>
           <ul>
             <li><i class="fas fa-theater-masks"></i> Narrative divided into theatrical acts</li>
@@ -113,24 +115,24 @@
     </div>
   </section>
 
-  <section id="purchase" class="purchase-section">
+  <section id="purchase" class="section">
     <div class="container">
-      <div class="purchase-content glass-card">
-        <h2>Get Early Access</h2>
+      <div class="glass-card">
+        <h2 class="section-title">Get Early Access</h2>
         <p>The alpha version is available now for testing and feedback. As this is an early version, purchases help support continued development.</p>
 
         <div class="discord-cta">
-          <h3><i class="fab fa-discord"></i> Discord Purchase</h3>
-          <p>To purchase the alpha version, please contact me directly on Discord:</p>
-          <a href="https://discord.com/users/mr_neon_dev" class="btn btn-primary" target="_blank">
+          <h3><i class="fab fa-discord"></i> Purchase via Discord</h3>
+          <p>Contact me directly on Discord to get access to the alpha version:</p>
+          <a href="https://discord.com/users/mr_neon_dev" class="btn btn-primary" style="margin-top: 20px;">
             <i class="fab fa-discord"></i> Message mr_neon_dev
           </a>
-          <p class="small-text">After contacting me on Discord, I'll provide you with download instructions and payment details.</p>
+          <p style="margin-top: 15px; font-size: 0.9rem;">I'll provide download instructions and payment details after you contact me.</p>
         </div>
 
-        <div class="alpha-disclaimer">
+        <div style="margin-top: 40px;">
           <h4>Alpha Version Disclaimer:</h4>
-          <ul>
+          <ul class="features-list">
             <li>Game is in active development</li>
             <li>Content may change significantly</li>
             <li>Some features may be incomplete</li>
@@ -141,15 +143,12 @@
     </div>
   </section>
 
-  <section id="screenshots" class="screenshots-section">
+  <section id="screenshots" class="section">
     <div class="container">
-      <h2>Alpha Screenshots</h2>
-      <div class="screenshot-gallery">
-        <!-- Placeholder for screenshots -->
-        <div class="screenshot-placeholder glass-card">
-          <i class="fas fa-image" style="font-size: 3rem; color: var(--primary);"></i>
-          <p>Screenshots coming soon</p>
-        </div>
+      <h2 class="section-title">Alpha Screenshots</h2>
+      <div class="glass-card screenshot-placeholder">
+        <i class="fas fa-image" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+        <p>Screenshots coming soon</p>
       </div>
     </div>
   </section>
@@ -159,40 +158,36 @@
   <div class="container">
     <div class="footer-content">
       <div class="footer-logo">
-        <span class="neon">Neon</span><span class="dev">Dev</span>
+        <a href="https://dev-adribot.github.io/Neon-Dev-Hub/">
+          <span class="neon">Neon</span><span class="dev">Dev</span>
+        </a>
       </div>
 
       <div class="footer-links">
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../index.html#games">Games</a></li>
-          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="https://dev-adribot.github.io/Neon-Dev-Hub/">Home</a></li>
+          <li><a href="https://dev-adribot.github.io/Neon-Dev-Hub/#games">Games</a></li>
+          <li><a href="https://dev-adribot.github.io/Neon-Dev-Hub/#contact">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-legal">
         <p>&copy; <span id="year"></span> Neon Dev. All rights reserved.</p>
-        <p class="small-text">Theater of the Mind is in alpha development. Features may change.</p>
+        <p class="small-text">Theater of the Mind is in alpha development.</p>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="../js/app.js"></script>
+<script src="https://dev-adribot.github.io/Neon-Dev-Hub/js/app.js"></script>
 <script>
-  // Additional game page JavaScript
   document.addEventListener('DOMContentLoaded', function() {
-    // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Discord button tracking
-    const discordBtn = document.querySelector('.btn-primary[target="_blank"]');
-    if(discordBtn) {
-      discordBtn.addEventListener('click', function() {
-        console.log('Discord contact initiated');
-        // You could add analytics here
-      });
-    }
+    // Track Discord clicks
+    document.querySelector('a[href^="https://discord"]').addEventListener('click', function() {
+      console.log('Discord contact initiated');
+    });
   });
 </script>
 </body>
