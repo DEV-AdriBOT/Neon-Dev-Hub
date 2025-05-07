@@ -1,10 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Theater of the Mind | Neon Dev</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="description" content="Psychological visual novel exploring trauma and memory">
 
+  <meta property="og:title" content="Theater of the Mind">
+  <meta property="og:description" content="Psychological visual novel exploring trauma and memory">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://neondev.example.com/theater">
+  <meta property="og:image" content="https://neondev.example.com/img/theater-preview.jpg">
+
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../icon.png">
+
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .game-header {
+      background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(77, 182, 172, 0.2)),
+      url('../img/theater-bg.jpg') no-repeat center center/cover;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 80px 0;
+      color: white;
+    }
+
+    .alpha-badge {
+      background: var(--primary);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .discord-cta {
+      background: rgba(88, 101, 242, 0.1);
+      border: 1px solid rgba(88, 101, 242, 0.3);
+      border-radius: var(--border-radius);
+      padding: 20px;
+      margin: 30px 0;
+    }
+
+    .discord-cta i {
+      color: #5865F2;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="scroll-progress"></div>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo-container">
+      <a href="../index.html" class="logo">
+        <span class="neon">Neon</span> <span class="dev">Dev</span>
+      </a>
+    </div>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../index.html#games" class="nav-link">Back to Games</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="main-content">
+  <section class="game-header">
+    <div class="container">
+      <div class="hero-content">
+        <span class="alpha-badge">ALPHA VERSION</span>
+        <h1>Theater of the Mind</h1>
+        <p class="hero-text">A psychological journey through fragmented memories</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-game" class="about-game-section">
+    <div class="container">
+      <div class="about-game-content glass-card">
+        <h2>About the Game</h2>
+        <p><em>Theater of the Mind</em> is a surreal visual novel set in the subconscious of a character with repressed trauma. Each act represents an emotion turned into a stage. Each scene, an unanswered question.</p>
+        <p>Currently in alpha development using Python with Pygame, the game explores psychological themes through interactive narrative and symbolic puzzles.</p>
+
+        <div class="game-features">
+          <h3>Features:</h3>
+          <ul>
+            <li><i class="fas fa-theater-masks"></i> Narrative divided into theatrical acts</li>
+            <li><i class="fas fa-puzzle-piece"></i> Psychological puzzles</li>
+            <li><i class="fas fa-comments"></i> Dialogue choices that alter the story</li>
+            <li><i class="fas fa-music"></i> Adaptive emotional soundtrack</li>
+            <li><i class="fas fa-paint-brush"></i> Unique puppet theater visual style</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="purchase" class="purchase-section">
+    <div class="container">
+      <div class="purchase-content glass-card">
+        <h2>Get Early Access</h2>
+        <p>The alpha version is available now for testing and feedback. As this is an early version, purchases help support continued development.</p>
+
+        <div class="discord-cta">
+          <h3><i class="fab fa-discord"></i> Discord Purchase</h3>
+          <p>To purchase the alpha version, please contact me directly on Discord:</p>
+          <a href="https://discord.com/users/mr_neon_dev" class="btn btn-primary" target="_blank">
+            <i class="fab fa-discord"></i> Message mr_neon_dev
+          </a>
+          <p class="small-text">After contacting me on Discord, I'll provide you with download instructions and payment details.</p>
+        </div>
+
+        <div class="alpha-disclaimer">
+          <h4>Alpha Version Disclaimer:</h4>
+          <ul>
+            <li>Game is in active development</li>
+            <li>Content may change significantly</li>
+            <li>Some features may be incomplete</li>
+            <li>Available for Windows initially (Mac/Linux coming later)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="screenshots" class="screenshots-section">
+    <div class="container">
+      <h2>Alpha Screenshots</h2>
+      <div class="screenshot-gallery">
+        <!-- Placeholder for screenshots -->
+        <div class="screenshot-placeholder glass-card">
+          <i class="fas fa-image" style="font-size: 3rem; color: var(--primary);"></i>
+          <p>Screenshots coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="neon">Neon</span><span class="dev">Dev</span>
+      </div>
+
+      <div class="footer-links">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#games">Games</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-legal">
+        <p>&copy; <span id="year"></span> Neon Dev. All rights reserved.</p>
+        <p class="small-text">Theater of the Mind is in alpha development. Features may change.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+<script>
+  // Additional game page JavaScript
+  document.addEventListener('DOMContentLoaded', function() {
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Discord button tracking
+    const discordBtn = document.querySelector('.btn-primary[target="_blank"]');
+    if(discordBtn) {
+      discordBtn.addEventListener('click', function() {
+        console.log('Discord contact initiated');
+        // You could add analytics here
+      });
+    }
+  });
+</script>
 </body>
 </html>
