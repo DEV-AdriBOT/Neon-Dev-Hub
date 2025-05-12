@@ -1,14 +1,14 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Neon Dev Apps Hub</title>
+  <title data-translate-key="page_title">Neon Dev Apps Hub</title>
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="Official hub for Neon Dev's game projects and creative works">
+  <meta name="description" content="Official hub for Neon Dev's game projects and creative works" data-translate-key-content="meta_description">
 
-  <meta property="og:title" content="Neon Dev Apps Hub">
-  <meta property="og:description" content="Official hub for Neon Dev's game projects and creative works">
+  <meta property="og:title" content="Neon Dev Apps Hub" data-translate-key-content="og_title">
+  <meta property="og:description" content="Official hub for Neon Dev's game projects and creative works" data-translate-key-content="og_description">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://neondev.example.com">
   <meta property="og:image" content="https://neondev.example.com/img/social-preview.jpg">
@@ -31,20 +31,28 @@
 
 <header class="site-header">
   <div class="container">
-    <div class="logo-container">
+    <div class="logo-container" tabindex="0" aria-label="Neon Dev Apps Hub Logo">
       <h1 class="logo">
         <span class="neon">Neon</span> <span class="dev">Dev</span>
         <span class="apps-hub">Apps Hub</span>
       </h1>
     </div>
 
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Main navigation">
       <ul>
-        <li><a href="#games" class="nav-link">Games</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#games" class="nav-link" data-translate-key="nav_games">Games</a></li>
+        <li><a href="#about" class="nav-link" data-translate-key="nav_about">About</a></li>
+        <li><a href="#contact" class="nav-link" data-translate-key="nav_contact">Contact</a></li>
+        <li><a href="#achievements" class="nav-link" data-translate-key="nav_achievements">Logros</a></li>
       </ul>
     </nav>
+    <div class="user-stats">
+      <div class="user-profile-avatar-container" id="user-profile-summary" tabindex="0" role="button" data-translate-key-title="profile_edit_tooltip" title="Haz clic para editar tu perfil">
+        <img id="user-avatar-img" src="img/avatars/default.png" alt="User Avatar" data-translate-key-alt="user_avatar_alt">
+        <span id="user-profile-name" data-translate-key="default_username">Usuario Invitado</span>
+      </div>
+      <span id="user-points-display" data-translate-key="user_points" data-translate-params-points="0">Puntos: 0</span>
+    </div>
   </div>
 </header>
 
@@ -52,19 +60,19 @@
   <section id="hero" class="hero-section">
     <div class="container">
       <div class="hero-content">
-        <h2 class="hero-title">Immersive Experiences</h2>
-        <p class="hero-text">Discover my narrative and psychological games</p>
-        <a href="#games" class="btn btn-primary">View Games</a>
+        <h2 class="hero-title" data-translate-key="hero_title">Immersive Experiences</h2>
+        <p class="hero-text" data-translate-key="hero_text">Discover my narrative and psychological games</p>
+        <a href="#games" class="btn btn-primary" data-translate-key="view_games_btn">View Games</a>
       </div>
     </div>
   </section>
 
   <section id="games" class="games-section">
     <div class="container">
-      <h2 class="section-title">My Games</h2>
+      <h2 class="section-title" data-translate-key="section_title_my_games">My Games</h2>
 
       <div class="games-grid">
-        <article class="game-card glass-card content-placeholder">
+        <article class="game-card glass-card content-placeholder" data-game-id="theater_of_mind">
           <div class="skeleton-card-wrapper">
             <div class="skeleton-card">
               <div class="skeleton-text skeleton-text-medium"></div>
@@ -75,15 +83,15 @@
             </div>
           </div>
           <div class="game-card-content">
-            <h3>Theater of the Mind</h3>
+            <h3 data-translate-key="theater_of_mind_title">Theater of the Mind</h3>
             <div class="game-icon">🎭</div>
-            <p class="game-genre">Psychological Visual Novel</p>
-            <p class="game-description">A surreal journey through a fragmented psyche</p>
-            <a href="theater.html" class="btn btn-outline">Try the alpha</a>
+            <p class="game-genre" data-translate-key="theater_of_mind_genre">Psychological Visual Novel</p>
+            <p class="game-description" data-translate-key="theater_of_mind_desc">A surreal journey through a fragmented psyche</p>
+            <a href="#" class="btn btn-outline game-try-alpha" data-game-id="theater_of_mind" data-translate-key="game_try_alpha_btn">Try the alpha</a>
           </div>
         </article>
 
-        <article class="game-card glass-card content-placeholder">
+        <article class="game-card glass-card content-placeholder" data-game-id="fitboard">
           <div class="skeleton-card-wrapper">
             <div class="skeleton-card">
               <div class="skeleton-text skeleton-text-medium"></div>
@@ -94,11 +102,11 @@
             </div>
           </div>
           <div class="game-card-content">
-            <h3>FitBoard</h3>
+            <h3 data-translate-key="fitboard_title">FitBoard</h3>
             <div class="game-icon">🏋️‍♂️</div>
-            <p class="game-genre">Coming Soon in Alpha</p>
-            <p class="game-description">The best tools for doing excersice</p>
-            <button class="btn btn-outline" disabled>Coming Soon in Alpha</button>
+            <p class="game-genre" data-translate-key="fitboard_genre">Coming Soon in Alpha</p>
+            <p class="game-description" data-translate-key="fitboard_desc">The best tools for doing excersice</p>
+            <button class="btn btn-outline game-try-alpha" data-game-id="fitboard" disabled data-translate-key="game_coming_soon_btn">Coming Soon in Alpha</button>
           </div>
         </article>
 
@@ -108,66 +116,75 @@
 
   <section id="about" class="about-section">
     <div class="container">
-      <h2 class="section-title">About Neon Dev</h2>
+      <h2 class="section-title" data-translate-key="about_neon_dev_title">About Neon Dev</h2>
 
       <div class="about-content glass-card">
         <div class="about-text">
-          <p>Independent developer specializing in narrative experiences that explore human psychology.</p>
+          <p data-translate-key="about_neon_dev_text">Independent developer specializing in narrative experiences that explore human psychology.</p>
         </div>
 
         <div class="skills">
-          <h3>Skills</h3>
+          <h3 data-translate-key="skills_title">Skills</h3>
           <ul class="skills-list">
-            <li><i class="fas fa-code"></i> C++ Development</li>
-            <li><i class="fas fa-book"></i> Psychological Narrative</li>
-            <li><i class="fas fa-paint-brush"></i> Visual Design</li>
-            <li><i class="fas fa-headphones"></i> Sound Design</li>
+            <li><i class="fas fa-code"></i> <span data-translate-key="skill_cpp">C++ Development</span></li>
+            <li><i class="fas fa-book"></i> <span data-translate-key="skill_narrative">Psychological Narrative</span></li>
+            <li><i class="fas fa-paint-brush"></i> <span data-translate-key="skill_design">Visual Design</span></li>
+            <li><i class="fas fa-headphones"></i> <span data-translate-key="skill_sound">Sound Design</span></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
+  <section id="achievements" class="achievements-section">
+    <div class="container">
+      <h2 class="section-title" data-translate-key="achievements_section_title">Mis Logros</h2>
+      <div id="achievements-grid" class="achievements-grid">
+        <!-- Los logros se cargarán aquí por JavaScript -->
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="contact-section">
     <div class="container">
-      <h2 class="section-title">Contact</h2>
+      <h2 class="section-title" data-translate-key="contact_section_title">Contact</h2>
 
       <div class="contact-content">
         <form id="contact-form" class="glass-card">
           <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name" data-translate-key="form_name_label">Name</label>
             <input type="text" id="name" name="name" required>
           </div>
 
           <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email" data-translate-key="form_email_label">Email</label>
             <input type="email" id="email" name="email" required>
           </div>
 
           <div class="form-group">
-            <label for="message">Message</label>
+            <label for="message" data-translate-key="form_message_label">Message</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <button type="submit" class="btn btn-primary" data-translate-key="form_send_btn">Send Message</button>
         </form>
 
         <div class="social-links glass-card">
-          <h3>Connect With Me</h3>
+          <h3 data-translate-key="connect_with_me_title">Connect With Me</h3>
           <ul>
             <li>
               <a href="https://twitter.com/neondev" target="_blank" rel="noopener">
-                <i class="fab fa-twitter"></i> @neondev
+                <i class="fab fa-twitter"></i> <span data-translate-key="twitter_handle">@neondev</span>
               </a>
             </li>
             <li>
               <a href="https://github.com/neondev" target="_blank" rel="noopener">
-                <i class="fab fa-github"></i> neondev
+                <i class="fab fa-github"></i> <span data-translate-key="github_handle">neondev</span>
               </a>
             </li>
             <li>
               <a href="mailto:contact@neondev.example.com">
-                <i class="fas fa-envelope"></i> contact@neondev.example.com
+                <i class="fas fa-envelope"></i> <span data-translate-key="email_address">contact@neondev.example.com</span>
               </a>
             </li>
           </ul>
@@ -176,6 +193,56 @@
     </div>
   </section>
 </main>
+
+<div id="toast-notifications-container" aria-live="assertive" aria-atomic="true"></div>
+
+<!-- Profile Edit Modal -->
+<div id="profile-edit-modal" class="modal" role="dialog" aria-modal="true" data-translate-key-aria-labelledby="profile_modal_title">
+  <div class="modal-content glass-card">
+    <button class="close-modal-btn" id="close-profile-modal" data-translate-key-aria-label="close_modal_btn_label" aria-label="Cerrar modal">&times;</button>
+    <h3 id="profile_modal_title" data-translate-key="edit_profile_title">Editar Perfil</h3>
+    <form id="profile-edit-form">
+      <div class="form-group">
+        <label for="profile-username" data-translate-key="username_label">Nombre de Usuario:</label>
+        <input type="text" id="profile-username" name="username" maxlength="20">
+      </div>
+      <div class="form-group">
+        <label for="profile-bio" data-translate-key="bio_label">Biografía (corta):</label>
+        <textarea id="profile-bio" name="bio" rows="3" maxlength="100"></textarea>
+      </div>
+      <div class="form-group">
+        <label data-translate-key="avatar_label">Avatar:</label>
+        <div class="avatar-selector" role="radiogroup" data-translate-key-aria-label="avatar_selector_label">
+          <img src="img/avatars/avatar1.png" alt="Avatar 1" data-avatar="img/avatars/avatar1.png" class="avatar-option" role="radio" aria-checked="false" tabindex="0" data-translate-key-alt="avatar1_alt">
+          <img src="img/avatars/avatar2.png" alt="Avatar 2" data-avatar="img/avatars/avatar2.png" class="avatar-option" role="radio" aria-checked="false" tabindex="0" data-translate-key-alt="avatar2_alt">
+          <img src="img/avatars/avatar3.png" alt="Avatar 3" data-avatar="img/avatars/avatar3.png" class="avatar-option" role="radio" aria-checked="false" tabindex="0" data-translate-key-alt="avatar3_alt">
+          <img src="img/avatars/default.png" alt="Avatar por defecto" data-avatar="img/avatars/default.png" class="avatar-option selected" role="radio" aria-checked="true" tabindex="0" data-translate-key-alt="default_avatar_alt">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="profile-avatar-bg" data-translate-key="avatar_bg_label">Color de fondo del Avatar (si es un icono):</label>
+        <input type="color" id="profile-avatar-bg" name="avatarBgColor" value="#4db6ac">
+      </div>
+
+      <h4 data-translate-key="theme_customization_title">Personalización de Tema</h4>
+      <div class="form-group">
+        <label for="theme-primary-color" data-translate-key="theme_color_label">Color Primario del Tema:</label>
+        <input type="color" id="theme-primary-color" name="primaryColor" value="#4db6ac">
+      </div>
+      <div class="form-group theme-presets">
+        <label data-translate-key="presets_label">Colores Predefinidos:</label>
+        <div class="color-preset" data-color="#4db6ac" style="background-color: #4db6ac;" tabindex="0" role="button" data-translate-key-title="preset_turquoise_title" title="Turquesa (Defecto)"></div>
+        <div class="color-preset" data-color="#ff7043" style="background-color: #ff7043;" tabindex="0" role="button" data-translate-key-title="preset_coral_title" title="Coral"></div>
+        <div class="color-preset" data-color="#7e57c2" style="background-color: #7e57c2;" tabindex="0" role="button" data-translate-key-title="preset_amethyst_title" title="Amatista"></div>
+        <div class="color-preset" data-color="#5c6bc0" style="background-color: #5c6bc0;" tabindex="0" role="button" data-translate-key-title="preset_indigo_title" title="Indigo"></div>
+        <div class="color-preset" data-color="#26a69a" style="background-color: #26a69a;" tabindex="0" role="button" data-translate-key-title="preset_teal_title" title="Verde Azulado"></div>
+        <div class="color-preset" data-color="#ec407a" style="background-color: #ec407a;" tabindex="0" role="button" data-translate-key-title="preset_pink_title" title="Rosa"></div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" data-translate-key="save_changes_btn">Guardar Cambios</button>
+    </form>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="container">
@@ -186,20 +253,33 @@
 
       <div class="footer-links">
         <ul>
-          <li><a href="#games">Games</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#games" data-translate-key="footer_nav_games">Games</a></li>
+          <li><a href="#about" data-translate-key="footer_nav_about">About</a></li>
+          <li><a href="#contact" data-translate-key="footer_nav_contact">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-legal">
-        <p>&copy; <span id="year"></span> Neon Dev. All rights reserved.</p>
+        <p data-translate-key="footer_copyright" data-translate-params-year="current">&copy; <span id="year"></span> Neon Dev. All rights reserved.</p>
+      </div>
+
+      <div class="language-switcher">
+        <label for="lang-select" data-translate-key="language_switcher_label">Idioma/Language:</label>
+        <select id="lang-select" aria-label="Seleccionar idioma">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
       </div>
     </div>
   </div>
 </footer>
 
-<button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+<div class="accessibility-toggles">
+  <button id="high-contrast-toggle" data-translate-key-aria-label="high_contrast_toggle_label" aria-label="Toggle high contrast mode" data-translate-key-title="high_contrast_toggle_title" title="Alternar Alto Contraste">
+    <i class="fas fa-adjust"></i>
+  </button>
+  <button id="dark-mode-toggle" data-translate-key-aria-label="dark_mode_toggle_label" aria-label="Toggle dark mode">🌙</button>
+</div>
 
 <script src="js/app.js"></script>
 </body>
