@@ -46,13 +46,7 @@
         <li><a href="#achievements" class="nav-link" data-translate-key="nav_achievements">Logros</a></li>
       </ul>
     </nav>
-    <div class="user-stats">
-      <div class="user-profile-avatar-container" id="user-profile-summary" tabindex="0" role="button" data-translate-key-title="profile_edit_tooltip" title="Haz clic para editar tu perfil">
-        <img id="user-avatar-img" src="img/avatars/default.png" alt="User Avatar" data-translate-key-alt="user_avatar_alt">
-        <span id="user-profile-name" data-translate-key="default_username">Usuario Invitado</span>
-      </div>
-      <span id="user-points-display" data-translate-key="user_points" data-translate-params-points="0">Puntos: 0</span>
-    </div>
+
   </div>
 </header>
 
@@ -72,16 +66,7 @@
       <h2 class="section-title" data-translate-key="section_title_my_games">My Games</h2>
 
       <div class="games-grid">
-        <article class="game-card glass-card content-placeholder" data-game-id="theater_of_mind">
-          <div class="skeleton-card-wrapper">
-            <div class="skeleton-card">
-              <div class="skeleton-text skeleton-text-medium"></div>
-              <div class="skeleton-icon"></div>
-              <div class="skeleton-text skeleton-text-short"></div>
-              <div class="skeleton-text skeleton-text-long"></div>
-              <div class="skeleton-button"></div>
-            </div>
-          </div>
+        <article class="game-card glass-card" data-game-id="theater_of_mind">
           <div class="game-card-content">
             <h3 data-translate-key="theater_of_mind_title">Theater of the Mind</h3>
             <div class="game-icon">🎭</div>
@@ -91,16 +76,7 @@
           </div>
         </article>
 
-        <article class="game-card glass-card content-placeholder" data-game-id="fitboard">
-          <div class="skeleton-card-wrapper">
-            <div class="skeleton-card">
-              <div class="skeleton-text skeleton-text-medium"></div>
-              <div class="skeleton-icon"></div>
-              <div class="skeleton-text skeleton-text-short"></div>
-              <div class="skeleton-text skeleton-text-long"></div>
-              <div class="skeleton-button"></div>
-            </div>
-          </div>
+        <article class="game-card glass-card" data-game-id="fitboard">
           <div class="game-card-content">
             <h3 data-translate-key="fitboard_title">FitBoard</h3>
             <div class="game-icon">🏋️‍♂️</div>
@@ -196,53 +172,7 @@
 
 <div id="toast-notifications-container" aria-live="assertive" aria-atomic="true"></div>
 
-<!-- Profile Edit Modal -->
-<div id="profile-edit-modal" class="modal" role="dialog" aria-modal="true" data-translate-key-aria-labelledby="profile_modal_title">
-  <div class="modal-content glass-card">
-    <button class="close-modal-btn" id="close-profile-modal" data-translate-key-aria-label="close_modal_btn_label" aria-label="Cerrar modal">&times;</button>
-    <h3 id="profile_modal_title" data-translate-key="edit_profile_title">Editar Perfil</h3>
-    <form id="profile-edit-form">
-      <div class="form-group">
-        <label for="profile-username" data-translate-key="username_label">Nombre de Usuario:</label>
-        <input type="text" id="profile-username" name="username" maxlength="20">
-      </div>
-      <div class="form-group">
-        <label for="profile-bio" data-translate-key="bio_label">Biografía (corta):</label>
-        <textarea id="profile-bio" name="bio" rows="3" maxlength="100"></textarea>
-      </div>
-      <div class="form-group">
-        <label data-translate-key="avatar_label">Avatar:</label>
-        <div class="avatar-selector" role="radiogroup" data-translate-key-aria-label="avatar_selector_label">
-          <img src="img/avatars/avatar1.png" alt="Avatar 1" data-avatar="img/avatars/avatar1.png" class="avatar-option" role="radio" aria-checked="false" tabindex="0" data-translate-key-alt="avatar1_alt">
-          <img src="img/avatars/avatar2.png" alt="Avatar 2" data-avatar="img/avatars/avatar2.png" class="avatar-option" role="radio" aria-checked="false" tabindex="0" data-translate-key-alt="avatar2_alt">
-          <img src="img/avatars/avatar3.png" alt="Avatar 3" data-avatar="img/avatars/avatar3.png" class="avatar-option" role="radio" aria-checked="false" tabindex="0" data-translate-key-alt="avatar3_alt">
-          <img src="img/avatars/default.png" alt="Avatar por defecto" data-avatar="img/avatars/default.png" class="avatar-option selected" role="radio" aria-checked="true" tabindex="0" data-translate-key-alt="default_avatar_alt">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="profile-avatar-bg" data-translate-key="avatar_bg_label">Color de fondo del Avatar (si es un icono):</label>
-        <input type="color" id="profile-avatar-bg" name="avatarBgColor" value="#4db6ac">
-      </div>
 
-      <h4 data-translate-key="theme_customization_title">Personalización de Tema</h4>
-      <div class="form-group">
-        <label for="theme-primary-color" data-translate-key="theme_color_label">Color Primario del Tema:</label>
-        <input type="color" id="theme-primary-color" name="primaryColor" value="#4db6ac">
-      </div>
-      <div class="form-group theme-presets">
-        <label data-translate-key="presets_label">Colores Predefinidos:</label>
-        <div class="color-preset" data-color="#4db6ac" style="background-color: #4db6ac;" tabindex="0" role="button" data-translate-key-title="preset_turquoise_title" title="Turquesa (Defecto)"></div>
-        <div class="color-preset" data-color="#ff7043" style="background-color: #ff7043;" tabindex="0" role="button" data-translate-key-title="preset_coral_title" title="Coral"></div>
-        <div class="color-preset" data-color="#7e57c2" style="background-color: #7e57c2;" tabindex="0" role="button" data-translate-key-title="preset_amethyst_title" title="Amatista"></div>
-        <div class="color-preset" data-color="#5c6bc0" style="background-color: #5c6bc0;" tabindex="0" role="button" data-translate-key-title="preset_indigo_title" title="Indigo"></div>
-        <div class="color-preset" data-color="#26a69a" style="background-color: #26a69a;" tabindex="0" role="button" data-translate-key-title="preset_teal_title" title="Verde Azulado"></div>
-        <div class="color-preset" data-color="#ec407a" style="background-color: #ec407a;" tabindex="0" role="button" data-translate-key-title="preset_pink_title" title="Rosa"></div>
-      </div>
-
-      <button type="submit" class="btn btn-primary" data-translate-key="save_changes_btn">Guardar Cambios</button>
-    </form>
-  </div>
-</div>
 
 <footer class="site-footer">
   <div class="container">
