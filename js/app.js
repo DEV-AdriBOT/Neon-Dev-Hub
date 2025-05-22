@@ -130,23 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // --- INITIALIZATION ---
   document.getElementById("year").textContent = currentYear;
 
-  // Skeleton Loading
-  const contentPlaceholders = document.querySelectorAll(".content-placeholder");
-  contentPlaceholders.forEach(placeholder => {
-    const skeletonWrapper = placeholder.querySelector(".skeleton-card-wrapper");
-    const content = placeholder.querySelector(".game-card-content");
-    if (skeletonWrapper && content) {
-      skeletonWrapper.style.display = "block"; content.style.display = "none";
-      const delay = 800 + Math.random() * 700;
-      setTimeout(() => {
-        skeletonWrapper.style.opacity = "0"; skeletonWrapper.style.transition = "opacity 0.5s ease";
-        setTimeout(() => {
-          skeletonWrapper.style.display = "none"; content.style.display = "flex"; content.style.opacity = "0";
-          setTimeout(() => { content.style.opacity = "1"; content.style.transition = "opacity 0.5s ease"; }, 50);
-        }, 500);
-      }, delay);
-    }
-  });
+
 
   // Scroll Progress
   window.addEventListener("scroll", () => {
@@ -359,138 +343,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  // --- USER PROFILE & MODAL ---
-  const profileEditModal = document.getElementById("profile-edit-modal");
-  const closeProfileModalBtn = document.getElementById("close-profile-modal");
-  const profileEditForm = document.getElementById("profile-edit-form");
-  const userProfileSummary = document.getElementById("user-profile-summary");
-  const userAvatarImg = document.getElementById("user-avatar-img");
-  const userProfileNameDisplay = document.getElementById("user-profile-name");
-  const profileUsernameInput = document.getElementById("profile-username");
-  const profileBioInput = document.getElementById("profile-bio");
-  const avatarOptions = document.querySelectorAll(".avatar-option");
-  const profileAvatarBgInput = document.getElementById("profile-avatar-bg");
-  let currentUserProfile = {};
 
-  function initUserProfile(forceRerender = false) {
-    if (!forceRerender) {
-      const storedProfile = localStorage.getItem("neondev_user_profile");
-      currentUserProfile = storedProfile ? JSON.parse(storedProfile) : {
-        username: getString("default_username"), bio: getString("default_bio"),
-        avatarUrl: "img/avatars/default.png", avatarBgColor: "#4db6ac"
-      };
-    } else { // Update default texts if language changed
-      if (!currentUserProfile.username || currentUserProfile.username === translations_prev?.default_username) {
-        currentUserProfile.username = getString("default_username");
-      }
-      if (!currentUserProfile.bio || currentUserProfile.bio === translations_prev?.default_bio) {
-        currentUserProfile.bio = getString("default_bio");
-      }
-    }
-    updateProfileDisplay();
-    populateProfileEditForm();
-  }
-  let translations_prev = {}; // to track if default text needs update on lang change
-
-  function updateProfileDisplay() {
-    if (userAvatarImg) { userAvatarImg.src = currentUserProfile.avatarUrl; userAvatarImg.style.backgroundColor = currentUserProfile.avatarBgColor; }
-    if (userProfileNameDisplay) userProfileNameDisplay.textContent = currentUserProfile.username;
-  }
-  function populateProfileEditForm() {
-    if (!profileEditModal) return;
-    profileUsernameInput.value = currentUserProfile.username;
-    profileBioInput.value = currentUserProfile.bio;
-    profileAvatarBgInput.value = currentUserProfile.avatarBgColor;
-    avatarOptions.forEach(opt => {
-      opt.classList.remove("selected"); opt.setAttribute("aria-checked", "false");
-      if (opt.dataset.avatar === currentUserProfile.avatarUrl) { opt.classList.add("selected"); opt.setAttribute("aria-checked", "true");}
-    });
-    if (themePrimaryColorInput) themePrimaryColorInput.value = currentCustomTheme.primaryColor;
-    themeColorPresets.forEach(preset => { preset.classList.remove("selected"); if (preset.dataset.color === currentCustomTheme.primaryColor) preset.classList.add("selected"); });
-  }
-  function saveUserProfile() {
-    currentUserProfile.username = profileUsernameInput.value || getString("default_username");
-    currentUserProfile.bio = profileBioInput.value;
-    currentUserProfile.avatarBgColor = profileAvatarBgInput.value;
-    const selectedAvatar = document.querySelector(".avatar-option.selected");
-    if (selectedAvatar) currentUserProfile.avatarUrl = selectedAvatar.dataset.avatar;
-    localStorage.setItem("neondev_user_profile", JSON.stringify(currentUserProfile));
-    updateProfileDisplay();
-    if (themePrimaryColorInput) {
-      currentCustomTheme.primaryColor = themePrimaryColorInput.value;
-      localStorage.setItem("neondev_custom_theme", JSON.stringify(currentCustomTheme));
-      applyCustomThemeStyles(currentCustomTheme.primaryColor);
-    }
-    closeProfileModal();
-    showToastNotification(getString("toast_profile_updated_title"), getString("toast_profile_updated_message"), "fas fa-user-check");
-  }
-  function openProfileModal() {
-    if (profileEditModal) {
-      populateProfileEditForm();
-      profileEditModal.classList.add("show");
-      profileEditModal.removeAttribute("aria-hidden");
-      // Focus trap logic
-      focusableElementsInModal = Array.from(profileEditModal.querySelectorAll(
-        "a[href], button:not([disabled]), textarea, input:not([type=\"hidden\"]), select, [tabindex]:not([tabindex=\"-1\"]"
-      ));
-      firstFocusableElementInModal = focusableElementsInModal[0];
-      lastFocusableElementInModal = focusableElementsInModal[focusableElementsInModal.length - 1];
-      if(firstFocusableElementInModal) firstFocusableElementInModal.focus();
-    }
-  }
-  function closeProfileModal() {
-    if (profileEditModal) {
-      profileEditModal.classList.remove("show");
-      profileEditModal.setAttribute("aria-hidden", "true");
-      if(userProfileSummary) userProfileSummary.focus(); // Return focus to the button that opened the modal
-    }
-  }
-  if (userProfileSummary) {
-    userProfileSummary.addEventListener("click", openProfileModal);
-    userProfileSummary.addEventListener("keydown", (e) => { if(e.key === "Enter" || e.key === " ") openProfileModal(); });
-  }
-  if (closeProfileModalBtn) closeProfileModalBtn.addEventListener("click", closeProfileModal);
-  if (profileEditForm) profileEditForm.addEventListener("submit", function(e) { e.preventDefault(); saveUserProfile(); });
-  avatarOptions.forEach(option => {
-    option.addEventListener("click", function() {
-      avatarOptions.forEach(opt => {opt.classList.remove("selected"); opt.setAttribute("aria-checked", "false");});
-      this.classList.add("selected"); this.setAttribute("aria-checked", "true");
-    });
-    option.addEventListener("keydown", function(e) {
-      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); this.click(); }
-      // Basic arrow key navigation for radio group like behavior
-      let currentIndex = Array.from(avatarOptions).indexOf(this);
-      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
-        e.preventDefault();
-        const nextIndex = (currentIndex + 1) % avatarOptions.length;
-        avatarOptions[nextIndex].focus();
-        avatarOptions[nextIndex].click(); // Also select it
-      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
-        e.preventDefault();
-        const prevIndex = (currentIndex - 1 + avatarOptions.length) % avatarOptions.length;
-        avatarOptions[prevIndex].focus();
-        avatarOptions[prevIndex].click(); // Also select it
-      }
-    });
-  });
-  window.addEventListener("click", function(event) { if (event.target === profileEditModal) closeProfileModal(); });
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape" && profileEditModal && profileEditModal.classList.contains("show")) closeProfileModal();
-    // Focus trap for modal
-    if (profileEditModal && profileEditModal.classList.contains("show") && e.key === "Tab") {
-      if (e.shiftKey) { // Shift + Tab
-        if (document.activeElement === firstFocusableElementInModal) {
-          lastFocusableElementInModal.focus();
-          e.preventDefault();
-        }
-      } else { // Tab
-        if (document.activeElement === lastFocusableElementInModal) {
-          firstFocusableElementInModal.focus();
-          e.preventDefault();
-        }
-      }
-    }
-  });
 
   // --- EASTER EGG LOGIC ---
   const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
@@ -530,11 +383,10 @@ document.addEventListener("DOMContentLoaded", function() {
     loadCustomTheme();
     loadHighContrastMode();
     const userLang = localStorage.getItem("neondev_user_language") || navigator.language.split("-")[0] || "es";
-    await setLanguage(userLang); // This will also call initGamification and initUserProfile after translations are loaded
-    // Event listener for language select must be after initial setLanguage
+    await setLanguage(userLang);
     if (langSelect) {
       langSelect.addEventListener("change", (e) => {
-        translations_prev = JSON.parse(JSON.stringify(translations)); // Store old translations for default text comparison
+        translations_prev = JSON.parse(JSON.stringify(translations));
         setLanguage(e.target.value);
       });
     }
